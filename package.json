@@ -30,6 +30,5 @@
     "tsc": "tsc",
     "tsc:w": "tsc -w"
   },
-  "author": "Benny van Reeven",
   "license": "MIT"
 }
