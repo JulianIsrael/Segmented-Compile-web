@@ -1,0 +1,35 @@
+{
+  "name": "react-typescript",
+  "version": "1.0.0",
+  "description": "Minimal boilerplate for a single-page app using React, TypeScript with JSX (TSX), and Visual Studio Code.",
+  "repository": "bvanreeven/react-typescript",
+  "main": "index.js",
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "requirejs": "^2.3.2",
+    "systemjs": "^0.19.41",
+    "typescript": "^2.1.4"
+  },
+  "devDependencies": {
+    "@types/core-js": "^0.9.34",
+    "@types/node": "^6.0.45",
+    "@types/react": "^0.14.39",
+    "@types/react-dom": "^0.14.17",
+    "concurrently": "^3.1.0",
+    "lite-server": "^2.2.2",
+    "mkdirp": "^0.5.1",
+    "source-map-loader": "^0.1.5",
+    "ts-loader": "^0.9.0",
+    "typescript": "^2.1.4"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "lite": "lite-server",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w"
+  },
+  "author": "Benny van Reeven",
+  "license": "MIT"
+}
