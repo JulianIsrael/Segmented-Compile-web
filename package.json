@@ -1,9 +1,8 @@
 {
   "name": "react-typescript",
   "version": "1.0.0",
-  "description": "Minimal boilerplate for a single-page app using React, TypeScript with JSX (TSX), and Visual Studio Code.",
-  "repository": "bvanreeven/react-typescript",
-  "main": "index.js",
+  "description": " boilerplate with tsc and not bundling",
+  "main": "app/app.tsx",
   "dependencies": {
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
