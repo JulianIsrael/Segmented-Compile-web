@@ -3,7 +3,7 @@
 
 To build the project from the command-line:
 
-* install TSC globally `$ npm install -g TSC` 
+* install tsc globally `$ npm install -g tsc` 
 * `$ tsc -v` => Version 2.1.4
 * install typescript globally `$ npm install -g typescript`
 * install packages `npm install`
