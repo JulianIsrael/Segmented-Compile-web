@@ -12,5 +12,8 @@
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "systemjs": "^0.19.41"
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0"
   }
 }
