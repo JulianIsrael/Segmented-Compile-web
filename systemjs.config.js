@@ -1,11 +1,11 @@
 (function (global) {
   System.config({
-    //baseURL: '/build',
+    baseURL: '/src',
     paths: {
-      'npm:': 'node_modules/'
+      'npm:': '/node_modules/'
     },
     map: {
-      app: 'build',
+      'app': './src/',
       'react': 'npm:react/dist/react.js',
       'react-dom': 'npm:react-dom/dist/react-dom.js'
   },

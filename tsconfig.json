@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "outDir": "./build/",
+        "outDir": "./build/src",
         "module": "amd",
         "jsx": "react",
         "moduleResolution": "node",

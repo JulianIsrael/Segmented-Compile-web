@@ -17,6 +17,7 @@
     "@types/react-dom": "^0.14.17",
     "concurrently": "^3.1.0",
     "lite-server": "^2.2.2",
+    "minifier": "^0.8.0",
     "mkdirp": "^0.5.1",
     "source-map-loader": "^0.1.5",
     "ts-loader": "^0.9.0",
@@ -24,8 +25,13 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
-    "lite": "lite-server",
+    "mnf": "minify build/src --template {{filename}}.{{ext}}",
+    "cp:sc": "cp systemjs.config.js build",
+    "cp:html": "cp index.html build",
+    "cp:css": "cp -rf css build/css",
+    "clean": "rm -rf build/src && rm -rf build/css && rm build/index.html && rm build/systemjs.config.js",
+    "start": "npm run clean && npm run cp:css &&  npm run cp:sc && npm run cp:html && npm run tsc && npm run mnf && concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "lite": "cd build && lite-server -s .",
     "tsc": "tsc",
     "tsc:w": "tsc -w"
   },
