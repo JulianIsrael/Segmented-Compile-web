@@ -30,7 +30,7 @@
     "cp:sc": "cp systemjs.config.js build",
     "cp:html": "cp index.html build",
     "cp:css": "cp -rf css build/css",
-    "clean": "cd build && find . -maxdepth 1 -not -name node_modules -not -name package.json -delete",
+    "clean": "cd build && mv package.json node_modules && find . -mindepth 1 -name node_modules -prune -o -exec rm -rf {} + && mv node_modules/package.json .",
     "start": "npm run clean && npm run cp:css &&  npm run cp:sc && npm run cp:html && npm run tsc && npm run mnf && concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "lite": "cd build && lite-server -s .",
     "tsc": "tsc",
