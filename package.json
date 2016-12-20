@@ -31,8 +31,9 @@
     "cp:html": "cp index.html build",
     "cp:css": "cp -rf css build/css",
     "clean": "cd build && mv package.json node_modules && find . -mindepth 1 -name node_modules -prune -o -exec rm -rf {} + && mv node_modules/package.json .",
-    "start": "npm run clean && npm run cp:css &&  npm run cp:sc && npm run cp:html && npm run tsc && npm run mnf && concurrently \"npm run tsc:w\" \"npm run lite\" ",
-    "lite": "cd build && lite-server -s .",
+    "start": "npm run clean && npm run cp:css &&  npm run cp:sc && npm run cp:html && npm run tsc && npm run mnf && concurrently \"npm run serve:cdn\" \"npm run tsc:w\" \"npm run serve\" ",
+    "serve": "cd build && http-server -p 8000 --cors -o",
+    "serve:cdn": "cd cdn && http-server . -p 8080 --cors",
     "tsc": "tsc",
     "tsc:w": "tsc -w"
   },
