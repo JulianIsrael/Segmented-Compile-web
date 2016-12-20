@@ -24,12 +24,13 @@
     "typescript": "^2.1.4"
   },
   "scripts": {
+    "setup": "npm install && cd build && npm install",
     "build": "tsc",
     "mnf": "minify build/src --template {{filename}}.{{ext}}",
     "cp:sc": "cp systemjs.config.js build",
     "cp:html": "cp index.html build",
     "cp:css": "cp -rf css build/css",
-    "clean": "rm -rf build/src && rm -rf build/css && rm -f build/index.html && rm -f build/systemjs.config.js",
+    "clean": "cd build && find . -maxdepth 1 -not -name node_modules -not -name package.json -delete",
     "start": "npm run clean && npm run cp:css &&  npm run cp:sc && npm run cp:html && npm run tsc && npm run mnf && concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "lite": "cd build && lite-server -s .",
     "tsc": "tsc",
