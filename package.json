@@ -35,7 +35,7 @@
     "clean": "cd build && mv package.json node_modules && find . -mindepth 1 -name node_modules -prune -o -exec rm -rf {} + && mv node_modules/package.json .",
     "start": "npm run clean && npm run cp:css &&  npm run cp:sc && npm run cp:html && npm run tsc && concurrently \"npm run serve:cdn\" \"npm run tsc:w\" \"npm run serve\" ",
     "server": "http-server ./build -p 8000 --cors -o",
-    "serve": "browser-sync start --server 'build' --files 'build'",
+    "serve": "cd build && browser-sync start --server . --files .",
     "serve:cdn": "http-server ./cdn -p 8080 --cors",
     "tsc": "tsc",
     "tsc:w": "tsc -w"
